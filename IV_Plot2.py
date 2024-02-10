@@ -1,8 +1,8 @@
 #IV性能評価のプロット
-#1行目...アノード電位
-#2行目...アノード電流
-#3行目...カソード電位
-#4行目...カソード電流
+#1行目...アノード電流
+#2行目...アノード電位
+#3行目...カソード電流
+#4行目...カソード電位
 #import
 import pandas as pd
 import numpy as np
@@ -14,15 +14,15 @@ csv_file_path = "C:\\Users\\eitat\\OneDrive\\ドキュメント\\ac.csv"
 #csvファイルをデータフレームに読み込む
 df = pd.read_csv(csv_file_path, header = None,index_col = None)
 
-#アノード電流にマイナスを乗算
-Ea = -1*df[0]
-Ec = df[2]
+#電位を定義
+Ea = df[1]
+Ec = df[3]
 print(Ea)
 print(Ec)
 
-#電流単位をmAに変換、カソード電流にマイナスを乗算
-Ia = df[1]
-Ic = -1*df[3]
+#電流を定義
+Ia = df[0]
+Ic = df[2]
 print(Ia)
 print(Ic)
 
